@@ -1,0 +1,11 @@
+-- Business Question: What is the distribution of orders by hour of the day?
+-- Insight: Identifies peak ordering hours to optimize staffing, improve service efficiency, and plan promotions.
+
+SELECT HOUR(order_time) AS order_hour,
+COUNT(order_id) AS total_orders
+FROM orders
+GROUP BY order_hour
+ORDER BY order_hour;
+
+-- Expected Outcome:
+-- Highest order volume observed during peak hours (typically lunch and dinner time).
